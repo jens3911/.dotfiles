@@ -172,8 +172,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # CUSTOM KEYS START
 # ------------------------------------------
 exec_always --no-startup-id feh --randomize --bg-scale ~/ansible/wallpaper/*
-exec_always firefox
-exec_always tmux
+exec firefox
+exec tmux
 
 
 # Pulse Audio controls
