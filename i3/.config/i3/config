@@ -185,7 +185,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Left move workspace to output left
 bindsym $mod+Right move workspace to output right
 
-assign [class="firefox"] $ws1
+#assign [class="firefox"] $ws1
+for_window [class="firefox"] move to workspace $ws1
 assign [class="Gnome-terminal"] $ws2
 assign [class="Spotify"] $ws8
 
@@ -195,7 +196,7 @@ assign [class="Spotify"] $ws8
 exec_always --no-startup-id feh --randomize --bg-scale ~/ansible/wallpaper/*
 exec_always xrandr --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-3 --off --output HDMI-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal
 exec firefox
-exec terminal
+exec gnome-terminal
 exec compton
 
 hide_edge_borders both
