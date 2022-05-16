@@ -97,6 +97,8 @@ call plug#end()
 
 " let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 
+let loaded_matchparen = 1
+let mapleader = " "
 
 " noremap <leader>vwh :h <C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
