@@ -105,8 +105,8 @@ let mapleader = " "
 " nnoremap <leader>u :UndotreeShow<CR>
 " nnoremap <leader>pv :Ex<CR>
 " nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-" nnoremap <Leader>+ :vertical resize +5<CR>
-" nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>- :vertical resize -5<CR>
 " nnoremap <Leader>rp :resize 100<CR>
 " nnoremap <Leader>ee oif err != nil {<CR>return nil, err<CR>}<CR><esc>kkI<esc>
 " nnoremap <Leader>cpu a%" PRIu64 "<esc>
