@@ -26,7 +26,7 @@
 [\]>[null]
 [lshift]>[null]
 {;}>{-ralt}{'}{+ralt}
-{lshift}{;}>{-lshift}{'}{'}{+lshift}
+{lshift}{;}>{-ralt}{-lshift}{'}{+lshift}{+ralt}
 {rshift}{q}>{-lshift}{2}{+lshift}
 [bspace]>[lshift]
 [delete]>[kpshft]
@@ -87,7 +87,9 @@
 [kp-\]>[null]
 [kp-lshift]>[null]
 {kp-;}>{-lshift}{=}{+lshift}
+{kp-;}{kp-lctrl}>{-lctrl}{-lshift}{=}{+lshift}{+lctrl}
 {kp-q}>{hyphen}
+{kp-q}{kp-lctrl}>{-lctrl}{hyphen}{+lctrl}
 {kp-j}>{-lshift}{8}{+lshift}
 {kp-k}>{/}
 {kp-x}>{-lshift}{/}{+lshift}
