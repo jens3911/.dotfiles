@@ -125,8 +125,8 @@ nnoremap <Leader>- :vertical resize -5<CR>
 " vnoremap K :m '<-2<CR>gv=gv
 
 " nnoremap Y yg$
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
 " nnoremap J mzJ`z
 
 " greatest remap ever
