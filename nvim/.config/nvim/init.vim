@@ -96,12 +96,6 @@ nnoremap <Leader>Q :q!<CR>
 
 nnoremap <Leader>; $a;<Esc>
 
-inoremap { {}<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap ' ''<left>
-inoremap " ""<left>
-
 " Moving text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -133,3 +127,59 @@ nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR>
 nnoremap <leader>ph :lua require('telescope.builtin').help_tags()<CR>
 " nnoremap <leader>gw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 " nnoremap <leader>gm :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
+
+
+inoremap { {}<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap ' ''<left>
+inoremap " ""<left>
+
+let curly = "}"
+inoremap <expr> } CheckNextParens(curly)
+
+let bracket = "]"
+inoremap <expr> ] CheckNextParens(bracket)
+
+let parens = ")"
+inoremap <expr> ) CheckNextParens(parens)
+
+let quote = "'"
+inoremap <expr> ' CheckNextQuote(quote)
+
+let dquote = '"'
+inoremap <expr> " CheckNextQuote(dquote)
+
+let bticks = '`'
+inoremap <expr> ` CheckNextQuote(bticks)
+
+function CheckNextQuote(c)
+  let after = col('.')
+  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
+  
+  if (afterChar == a:c)
+    return "\<right>"
+  endif
+  if (afterChar == ' ' || afterChar == '' || afterChar == ')' || afterChar== '}' || afterChar == ']')
+    return a:c . a:c . "\<left>"
+  endif
+  if (afterChar != a:c)
+    let bticks = '`'
+    let dquote = '"'
+    let quote = "'"
+    if(afterChar == dquote || afterChar == quote || afterChar == bticks)
+      return a:c . a:c . "\<left>"
+    endif
+  endif
+  return a:c
+endfunction
+
+function CheckNextParens(c)
+  let after = col('.')
+  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
+  if (afterChar == a:c)
+
+    return "\<right>"
+  endif
+  return a:c
+endfunction
