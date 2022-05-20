@@ -1,3 +1,6 @@
+set backspace   =indent,eol,start  " Make backspace work as you would expect.
+
+
 set guicursor=
 set relativenumber
 set nohlsearch
