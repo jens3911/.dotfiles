@@ -25,7 +25,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'onsails/lspkind-nvim'
-" Plug 'github/copilot.vim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 
 " Diagram
@@ -103,10 +102,10 @@ let mapleader = " "
 " noremap <leader>vwh :h <C-R>=expand("<cword>")<CR><CR>
 " nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
 " nnoremap <leader>u :UndotreeShow<CR>
-" nnoremap <leader>pv :Ex<CR>
-" nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
+nnoremap <leader>pv :Ex<CR>
+nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+" nnoremap <Leader>+ :vertical resize +5<CR>
+" nnoremap <Leader>- :vertical resize -5<CR>
 " nnoremap <Leader>rp :resize 100<CR>
 " nnoremap <Leader>ee oif err != nil {<CR>return nil, err<CR>}<CR><esc>kkI<esc>
 " nnoremap <Leader>cpu a%" PRIu64 "<esc>
@@ -119,26 +118,31 @@ nnoremap <Leader>- :vertical resize -5<CR>
 " nnoremap <leader>glp :cprev<CR>:call search(_search_term)<CR>
 " nnoremap <leader>nf :!./scripts/format.py %
 
-" nnoremap <leader>x :silent !chmod +x %<CR>
+nnoremap <Leader>rr :register<CR>
 
-" vnoremap J :m '>+1<CR>gv=gv
-" vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>x :silent !chmod +x %<CR>
 
-" nnoremap Y yg$
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap <Leader>k :m .-2<CR>==
+nnoremap <Leader>j :m .+1<CR>==
+
+nnoremap Y yg$
 nnoremap n nzzzv
 nnoremap N Nzzzv
-" nnoremap J mzJ`z
+nnoremap J mzJ`z
 
 " greatest remap ever
-" xnoremap <leader>p "_dP
+xnoremap <leader>p "_dP
 
 " next greatest remap ever : asbjornHaland
-" nnoremap <leader>y "+y
-" vnoremap <leader>y "+y
-" nmap <leader>Y "+Y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nmap <leader>Y "+Y
 
-" nnoremap <leader>d "_d
-" vnoremap <leader>d "_d
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 " vim TODO
 " nmap <Leader>tu <Plug>BujoChecknormal
