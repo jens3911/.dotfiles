@@ -1,5 +1,6 @@
 set backspace   =indent,eol,start  " Make backspace work as you would expect.
-
+filetype plugin indent on  " Load plugins according to detected filetype.
+syntax on                  " Enable syntax highlighting.
 
 set guicursor=
 set relativenumber
