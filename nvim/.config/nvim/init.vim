@@ -129,6 +129,76 @@ nnoremap <leader>ph :lua require('telescope.builtin').help_tags()<CR>
 " nnoremap <leader>gm :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 
 
+
+inoremap <expr> <CR> ParensIndent()
+
+function! ParensIndent()
+  let prev = col('.') - 1
+  let after = col('.')
+  let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
+  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
+  if (prevChar == '"' && afterChar == '"') ||
+\    (prevChar == "'" && afterChar == "'") ||
+\    (prevChar == "(" && afterChar == ")") ||
+\    (prevChar == "{" && afterChar == "}") ||
+\    (prevChar == "[" && afterChar == "]")
+    return "\<CR>\<ESC>O"
+  endif
+  
+  return "\<CR>"
+endfunction
+
+inoremap <expr> <space> ParensSpacing()
+
+function! ParensSpacing()
+  let prev = col('.') - 1
+  let after = col('.')
+  let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
+  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
+  if (prevChar == '"' && afterChar == '"') ||
+\    (prevChar == "'" && afterChar == "'") ||
+\    (prevChar == "(" && afterChar == ")") ||
+\    (prevChar == "{" && afterChar == "}") ||
+\    (prevChar == "[" && afterChar == "]")
+    return "\<space>\<space>\<left>"
+  endif
+  
+  return "\<space>"
+endfunction
+
+inoremap <expr> <BS> ParensRemoveSpacing()
+
+function! ParensRemoveSpacing()
+  let prev = col('.') - 1
+  let after = col('.')
+  let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
+  let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
+
+  if (prevChar == '"' && afterChar == '"') ||
+\    (prevChar == "'" && afterChar == "'") ||
+\    (prevChar == "(" && afterChar == ")") ||
+\    (prevChar == "{" && afterChar == "}") ||
+\    (prevChar == "[" && afterChar == "]")
+    return "\<bs>\<right>\<bs>"
+  endif
+  
+  if (prevChar == ' ' && afterChar == ' ')
+    let prev = col('.') - 2
+    let after = col('.') + 1
+    let prevChar = matchstr(getline('.'), '\%' . prev . 'c.')
+    let afterChar = matchstr(getline('.'), '\%' . after . 'c.')
+    if (prevChar == '"' && afterChar == '"') ||
+  \    (prevChar == "'" && afterChar == "'") ||
+  \    (prevChar == "(" && afterChar == ")") ||
+  \    (prevChar == "{" && afterChar == "}") ||
+  \    (prevChar == "[" && afterChar == "]")
+      return "\<bs>\<right>\<bs>"
+    endif
+  endif
+  
+  return "\<bs>"
+endfunction
+
 inoremap { {}<left>
 inoremap ( ()<left>
 inoremap [ []<left>
