@@ -89,6 +89,8 @@ nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>rr :register<CR>
 nnoremap <leader>x :silent !chmod +x %<CR>
+nnoremap <Leader>+ :resize +5<CR>
+nnoremap <Leader>- :resize -5<CR>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>
