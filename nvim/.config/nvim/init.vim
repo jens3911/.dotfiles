@@ -79,9 +79,6 @@ Plug 'mhinz/vim-rfc'
 " prettier
 Plug 'sbdchd/neoformat'
 
-" should I try another status bar???
-"  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-" Plug 'hoob3rt/lualine.nvim'
 
 call plug#end()
 
@@ -133,14 +130,15 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
-" greatest remap ever
+" greatest remap ever = dont loose your paste by the selected
 xnoremap <leader>p "_dP
 
-" next greatest remap ever : asbjornHaland
+" next greatest remap ever : copy to your system clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nmap <leader>Y "+Y
 
+" greatest remap ever = dont loose your paste when deleting
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
