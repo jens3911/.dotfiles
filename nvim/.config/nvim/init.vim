@@ -104,6 +104,14 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap <Leader>k :m .-2<CR>==
 nnoremap <Leader>j :m .+1<CR>==
 
+nnoremap <expr> n  'Nn'[v:searchforward]
+xnoremap <expr> n  'Nn'[v:searchforward]
+onoremap <expr> n  'Nn'[v:searchforward]
+
+nnoremap <expr> N  'nN'[v:searchforward]
+xnoremap <expr> N  'nN'[v:searchforward]
+onoremap <expr> N  'nN'[v:searchforward]
+
 nnoremap Y yg$
 nnoremap n nzzzv
 nnoremap N Nzzzv
