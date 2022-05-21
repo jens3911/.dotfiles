@@ -88,6 +88,8 @@ let mapleader = " "
 nnoremap <leader>O  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
 nnoremap <leader>o  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+xnoremap <  <gv
+xnoremap >  >gv
 
 nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
