@@ -17,6 +17,11 @@ call plug#begin('~/.vim/plugged')
 " Yes, I am a sneaky snek now
 Plug 'ambv/black'
 
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
+
 " Plebvim lsp Plugins
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
