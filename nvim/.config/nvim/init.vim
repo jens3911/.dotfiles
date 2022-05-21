@@ -99,8 +99,9 @@ nnoremap <Leader>+ :resize +5<CR>
 nnoremap <Leader>- :resize -5<CR>
 
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>Q :q!<CR>
+"use ZZ and ZQ instead
+"nnoremap <Leader>q :q<CR>
+"nnoremap <Leader>Q :q!<CR>
 
 nnoremap <Leader>; $a;<Esc>
 
