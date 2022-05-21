@@ -85,6 +85,8 @@ call plug#end()
 let loaded_matchparen = 1
 let mapleader = " "
 
+nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
 nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>rr :register<CR>
