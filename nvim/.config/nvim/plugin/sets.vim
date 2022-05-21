@@ -35,4 +35,4 @@ set shortmess+=c
 set colorcolumn=80
 
 set foldmethod=indent
-
+set foldlevel=0
