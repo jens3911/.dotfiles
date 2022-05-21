@@ -85,6 +85,8 @@ call plug#end()
 let loaded_matchparen = 1
 let mapleader = " "
 
+nnoremap <leader>o  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+nnoremap <leader>O  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 
 nnoremap <leader>pv :Ex<CR>
