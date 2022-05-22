@@ -96,6 +96,13 @@ nnoremap <leader>l :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
 xnoremap <  <gv
 xnoremap >  >gv
 
+"switch between buffers
+map <C-K> :bprev<CR>
+map <C-J> :bnext<CR>
+
+"delete current buffer
+nnoremap <leader>pv :Ex<CR>
+
 nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 nnoremap <Leader>rr :register<CR>
