@@ -110,6 +110,9 @@ nnoremap <leader>x :silent !chmod +x %<CR>
 nnoremap <Leader>+ :resize +5<CR>
 nnoremap <Leader>- :resize -5<CR>
 
+"write all buffers
+nnoremap <Leader>wa :bufdo wq<CR>
+
 nnoremap <Leader>w :w<CR>
 "use ZZ and ZQ instead
 "nnoremap <Leader>q :q<CR>
