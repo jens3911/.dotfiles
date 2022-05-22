@@ -14,9 +14,7 @@ set wildignore+=**/.git/*
 
 call plug#begin('~/.vim/plugged')
 
-" Yes, I am a sneaky snek now
-Plug 'ambv/black'
-
+" svelte plugin
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
@@ -83,6 +81,9 @@ Plug 'mhinz/vim-rfc'
 " prettier
 Plug 'sbdchd/neoformat'
 
+
+" Black is the uncompromising Python code formatter. 
+" Plug 'ambv/black'
 call plug#end()
 
 
