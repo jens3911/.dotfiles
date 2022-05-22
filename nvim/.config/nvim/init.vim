@@ -142,6 +142,7 @@ nnoremap N Nzzzv
 nnoremap J mzJ`z
 
 " greatest remap ever = dont loose your paste by the selected
+" you can do this with P too, without remapping
 xnoremap <leader>p "_dP
 
 " next greatest remap ever : copy to your system clipboard
