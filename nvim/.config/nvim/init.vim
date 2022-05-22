@@ -101,7 +101,7 @@ map <C-K> :bprev<CR>
 map <C-J> :bnext<CR>
 
 "delete current buffer
-nnoremap <leader>db :db<CR>
+nnoremap <leader>bd :bd<CR>
 
 nnoremap <leader>pv :Ex<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
