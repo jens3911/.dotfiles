@@ -115,6 +115,9 @@ nnoremap <Leader>w :w<CR>
 "nnoremap <Leader>q :q<CR>
 "nnoremap <Leader>Q :q!<CR>
 
+" make . to work with visually selected lines
+vnoremap . :normal.<CR>
+
 nnoremap <Leader>; $a;<Esc>
 
 " Moving text
