@@ -36,8 +36,8 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<S-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<S-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- keymap("n", "<S-j>", "<Esc>:m .+1<CR>==gi", opts)
+-- keymap("n", "<S-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -51,7 +51,8 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 keymap("v", "<S-j>", ":m .+1<CR>==", opts)
 keymap("v", "<S-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- do this with P
+-- keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down

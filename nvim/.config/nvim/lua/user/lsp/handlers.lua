@@ -96,5 +96,66 @@ if status_ok then
   M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 end
 
+-- Check if plugin has been loaded by packer.
+function M.is_loaded(plugin)
+    return packer_plugins[plugin] and packer_plugins[plugin].loaded
+end
+
+-- Map keys, registering if which-key is loaded. Skirts around which-key issues.
+local function _map(mode, lhs, rhs, description, options)
+
+    local defaults = {  -- Accepted `options`.
+        noremap = true,
+        silent  = true,
+        buffer  = nil,
+        nowait  = false,
+    }
+    if options == nil then
+        options = defaults
+    else
+        options = vim.tbl_extend('keep', options, defaults)
+    end
+
+    if M.is_loaded("which-key.nvim") and ('nvsxoiRct'):find(mode) then
+        --[[
+        Supported modes taken from `check_mode()` [0]. We don't call
+        `require("which-key.util").check_mode()` as it will print errors.
+          
+          [0] https://github.com/folke/which-key.nvim/blob/main/lua/which-key/util.lua
+        --]]
+        if mode == 'o' then
+            -- Avoid redundant entries caused by operator-pending mode mappings.
+            description = 'which_key_ignore'
+        elseif mode == 't' then
+            -- Convert terminal codes and keycodes.
+            rhs = vim.api.nvim_replace_termcodes(rhs, true, true, true)
+        end
+
+        options.mode = mode
+        require("which-key").register({ [lhs] = {rhs, description} }, options)
+    else
+        -- TODO: Switch to `vim.keymap.set()` in 0.7. Accepts 'buffer' in options.
+        if options.buffer then
+            local bufnr = options.buffer
+            options.buffer = nil
+            vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, options)
+        else
+            vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+        end
+    end
+end
+
+-- Map keys, supporting multiple modes and which-key registration.
+function M.map(modes, lhs, rhs, description, options)
+    if modes == '' then modes = 'nvo' end
+
+    for mode in modes:gmatch('.') do
+        _map(mode, lhs, rhs, description, options)
+    end
+end
+
+function M.nmap(lhs, rhs, description, options)
+    M.map('n', lhs, rhs, description, options)
+end
 
 return M
