@@ -96,6 +96,7 @@ local mappingsV = {
   ["R"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr><esc>", "Recent Projects" },
   ["y"] = { '"+y', "Yank Clipboard" },
   ["d"] = { '"_d', "Delete to Null" },
+  ["r"] = { '"<cmd>NvimTreeRefresh<CR>', "Refresh NvimTree" },
   P = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr><esc>", "Compile" },
