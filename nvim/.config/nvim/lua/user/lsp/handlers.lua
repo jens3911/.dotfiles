@@ -32,7 +32,24 @@ M.setup = function()
       prefix = "",
     },
   }
-
+configs.gopls = {
+  default_config = {
+    cmd = {"gopls"};
+    filetypes = {"go", "gomod"};
+    root_dir = util.root_pattern("go.mod", ".git");
+  };
+  -- on_new_config = function(new_config) end;
+  -- on_attach = function(client, bufnr) end;
+  docs = {
+    description = [[
+https://github.com/golang/tools/tree/master/gopls
+Google's lsp server for golang.
+]];
+    default_config = {
+      root_dir = [[root_pattern("go.mod", ".git")]];
+    };
+  };
+}
   vim.diagnostic.config(config)
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
