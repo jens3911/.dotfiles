@@ -94,6 +94,7 @@ local mappingsV = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr><esc>", "Find Text" },
   ["R"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr><esc>", "Recent Projects" },
+  ["r"] = { "<cmd>NvimTreeRefresh<cr><esc>", "Refresh Tree" },
   ["y"] = { '"+y', "Yank Clipboard" },
   ["d"] = { '"_d', "Delete to Trash" },
   P = {
@@ -203,8 +204,9 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["R"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Recent Projects" },
+  ["r"] = { "<cmd>NvimTreeRefresh<cr>", "Refresh Tree" },
   ["y"] = { '"+y', "Yank Clipboard" },
-  ["d"] = { '"_d', "Delete to Null" },
+  ["d"] = { '"_d', "Delete to Trash" },
   P = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
