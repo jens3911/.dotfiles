@@ -94,7 +94,6 @@ local mappingsV = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr><esc>", "Find Text" },
   ["R"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr><esc>", "Recent Projects" },
-  ["r"] = { '<cmd>NvimTreeRefresh<CR>', "Refresh NvimTree" },
   ["y"] = { '"+y', "Yank Clipboard" },
   ["d"] = { '"_d', "Delete to Trash" },
   P = {
