@@ -23,4 +23,28 @@ for _, server in pairs(servers) do
 	end
 	lspconfig[server].setup(opts)
 end
+lspconfig.gopls.setup{
+	on_attach = on_attach_vim,
+	capabilities = capabilities,
+	cmd = {"gopls", "serve"},
+	settings = {
+		gopls = {
+			analyses = {
+				unusedparams = true,
+			},
+			staticcheck = true,
+			linksInHover = false,
+			codelenses = {
+				generate = true,
+				gc_details = true,
+				regenerate_cgo = true,
+				tidy = true,
+				upgrade_depdendency = true,
+				vendor = true,
+			},
+			usePlaceholders = true,
+		},
+	},
+}
+
 -- lsp_installer.tsserver.setup {on_attach = custom_attach, root_dir = vim.loop.cwd }
