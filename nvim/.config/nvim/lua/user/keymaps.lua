@@ -35,6 +35,10 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+-- Align Items https://github.com/junegunn/vim-easy-align
+keymap("n", "ga", "<Plug>(EasyAlign)", opts)
+keymap("v", "ga", "<Plug>(EasyAlign)", opts)
+
 -- Move text up and down
 -- keymap("n", "<S-j>", "<Esc>:m .+1<CR>==gi", opts)
 -- keymap("n", "<S-k>", "<Esc>:m .-2<CR>==gi", opts)
