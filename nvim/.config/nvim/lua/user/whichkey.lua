@@ -227,7 +227,7 @@ local mappings = {
     name = "Tree",
     c = { "<cmd>NvimTreeCollapseKeepBuffers<cr>", "X unused Trees" },
     C = { "<cmd>NvimTreeCollapse<cr>", "X All Trees" },
-    s = { "<cmd>LspRestart<cr>", "Lsp Restart" },
+    r = { "<cmd>LspRestart<cr>", "Lsp Restart" },
   },
 
   G = {
