@@ -70,7 +70,7 @@ local setup = {
 }
 
 local optsV = {
-  mode = "v", -- NORMAL mode
+  mode = "v", -- Visual mode
   prefix = "<leader>",
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
@@ -105,6 +105,12 @@ local mappingsV = {
     s = { "<cmd>PackerSync<cr><esc>", "Sync" },
     S = { "<cmd>PackerStatus<cr><esc>", "Status" },
     u = { "<cmd>PackerUpdate<cr><esc>", "Update" },
+  },
+  T = {
+    name = "Tree",
+    c = { "<cmd>NvimTreeCollapseKeepBuffers<cr><esc>", "X unused Trees" },
+    C = { "<cmd>NvimTreeCollapse<cr><esc>", "X All Trees" },
+    s = { "<cmd>LspRestart<cr><esc>", "Sync" },
   },
 
   G = {
@@ -216,6 +222,12 @@ local mappings = {
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
+  T = {
+    name = "Tree",
+    c = { "<cmd>NvimTreeCollapseKeepBuffers<cr>", "X unused Trees" },
+    C = { "<cmd>NvimTreeCollapse<cr>", "X All Trees" },
+    s = { "<cmd>LspRestart<cr>", "Sync" },
   },
 
   G = {
